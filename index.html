@@ -10,6 +10,60 @@
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.js">
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- Add this CSS once on your page -->
+<style>
+  .pub-card{
+    position: relative;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+    margin: 12px 0;
+  }
+  .corner-ribbon{
+    /* customize color with --ribbon-bg */
+    --ribbon-bg: #16a34a; /* green */
+    position: absolute;
+    top: 12px;
+    right: -40px;
+    transform: rotate(45deg);
+    background: var(--ribbon-bg);
+    color: #fff;
+    padding: 4px 60px;
+    font: 700 12px/1 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+    pointer-events: none; /* ignore clicks */
+  }
+  /* Mobile fallback: show as a small badge instead of a corner ribbon */
+  @media (max-width: 520px){
+    .corner-ribbon{
+      position: static;
+      transform: none;
+      padding: 2px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+      border-radius: 999px;
+    }
+  }
+
+  /* Optional: inline badge if you prefer it next to the title */
+  .badge-new{
+    display: inline-block;
+    margin-left: .5rem;
+    padding: 2px 8px;
+    font: 700 11px/1 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    background: #16a34a;
+    color: #fff;
+    border-radius: 999px;
+    vertical-align: middle;
+  }
+</style>
+
 		
 		
 		
@@ -67,7 +121,22 @@
 <h3> <font color="purple"> <i class="fa fa-newspaper-o"></i> Current Research </font></h3>
 </header>
 
-	
+<div class="pub-card">
+  <span class="corner-ribbon" aria-hidden="true">New</span>
+
+  <p>
+    <b><a> [1] Clustering on Parameters: A Method for Forecasting in Short Panels </a></b>
+    <br>&nbsp;&nbsp;&nbsp;&nbsp; Kashish Arora and Vishal Gaur
+    <br>&nbsp;&nbsp;&nbsp;&nbsp; Preparing Submission
+  </p>
+
+  <details>
+    <summary>[Abstract] [<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5485946" target="_blank">SSRN</a>]</summary>
+    <div style="background-color:WhiteSmoke;padding:3%;margin-left: 2.6%">
+      We develop a parameter-driven clustering method to improve forecasting accuracy in panel data settings with short time series (small T) and many cross-sectional units (large N), a regime common in applications like retail demand forecasting, and customer and supply chain analytics. Traditional approaches struggle in these settings: unit-level models suffer from sparse data and noisy estimates, while pooling across observable characteristics fails to address unobserved heterogeneity. Our method addresses these challenges by clustering units based on estimated model parameters rather than observable characteristics, thereby capturing latent group structures without relying on predefined classifications. We formalize forecasting with latent groups as a joint clustering and parameter estimation problem. We show that this problem is NP-hard, which motivates our clustering estimator as a practical remedy. We formalize this estimator, derive its statistical properties, including bias, variance, and misclassification probabilities, and establish its asymptotic consistency as the cross-sectional dimension grows, even with fixed small T. Through simulations, we demonstrate that the estimator outperforms both individual and pooled estimators across a range of latent group configurations and approaches oracle benchmarks as T increases modestly. In two empirical applications, we apply the method to forecast firm-level retail sales and urban bike-sharing ridership in NYC, demonstrating significant gains in out-of-sample predictive accuracy. The discovered clusters group units with similar underlying dynamic structures that often cut across standard observable classifications such as industry codes or geographic boundaries. Our approach provides a flexible solution for high-dimensional forecasting tasks in operations and other fields.
+    </div>
+  </details>
+</div>	
 
 <p>
 <b><a> [1] Clustering on Parameters: A Method for Forecasting in Short Panels </a> </b>	
@@ -248,6 +317,7 @@ Managerial Implications: Our findings suggest that, by changing operations lever
 
 	</body>
 </html>
+
 
 
 
